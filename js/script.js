@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let prevTranslate = 0;
     let animationID = null;
     let lastTime = null;
-    const SCROLL_SPEED = 0.05; // スクロール速度（ピクセル/ミリ秒）
+    const SCROLL_SPEED = 0.05;
 
     // 自動スクロール
     function autoScroll(timestamp) {
@@ -80,10 +80,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (!isDragging) {
             currentTranslate -= SCROLL_SPEED * deltaTime;
-            // スクロール位置が最後まで行ったらリセット
-            if (currentTranslate <= -track.offsetWidth / 2) {
+            
+            // カードの合計幅を計算
+            const cardWidth = track.querySelector('.news-card').offsetWidth;
+            const gap = parseFloat(getComputedStyle(track).gap);
+            const numberOfCards = track.children.length;
+            const totalWidth = (cardWidth + gap) * numberOfCards;
+            const containerWidth = scrollContainer.offsetWidth;
+            
+            // 最後のカードが完全に画面外に出たらリセット
+            if (Math.abs(currentTranslate) >= totalWidth + containerWidth) {
                 currentTranslate = 0;
             }
+            
             track.style.transform = `translateX(${currentTranslate}px)`;
         }
         animationID = requestAnimationFrame(autoScroll);
