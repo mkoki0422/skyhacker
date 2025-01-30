@@ -272,9 +272,15 @@ main {
   overflow-y: hidden;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  cursor: grab;
+  user-select: none;
 
   &::-webkit-scrollbar {
     display: none;
+  }
+
+  &:active {
+    cursor: grabbing;
   }
 }
 

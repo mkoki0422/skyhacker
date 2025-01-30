@@ -152,14 +152,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // 慣性スクロールのアニメーション
     function momentumScroll() {
         if (Math.abs(velocity) > 0.01) {
-            currentTranslate += velocity * 16;  // メンバーセクションと同じ感覚に調整
-            velocity *= 0.99;  // メンバーセクションと同じ減衰率
+            currentTranslate += velocity * 16;
+            velocity *= 0.95;  // 減衰率を調整
+
+            // スクロール範囲の制限
+            const maxScroll = track.scrollWidth - track.clientWidth;
+            currentTranslate = Math.max(0, Math.min(currentTranslate, maxScroll));
+            
             track.style.transform = `translateX(${currentTranslate}px)`;
             requestAnimationFrame(momentumScroll);
         } else {
-            // 慣性スクロール終了後、自動スクロールを再開
-            lastTime = null;
-            autoScroll(performance.now());
+            velocity = 0;
         }
     }
 
@@ -169,7 +172,6 @@ document.addEventListener('DOMContentLoaded', () => {
         lastX = startX;
         prevTranslate = currentTranslate;
         lastTime = null;
-        velocity = 0;
         cancelAnimationFrame(animationID);
     };
 
@@ -181,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // 速度を計算
         const dx = currentX - lastX;
         const dt = 16; // 一般的なフレーム時間
-        velocity = dx / dt * 0.12; // メンバーセクションと同じ速度係数
+        velocity = dx / dt * 0.12; // Newsセクションと同じ速度係数
 
         const diff = currentX - startX;
         currentTranslate = prevTranslate + diff;
@@ -293,6 +295,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let isDragging = false;
     let startX;
     let scrollLeft;
+    let lastX;
 
     // メンバーコンテンツのスタイル設定
     membersContent.style.overflow = 'hidden';  // スクロール用に hidden に変更
@@ -322,10 +325,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // マウスドラッグによる横スクロール
+    // Members drag scroll
     membersContent.addEventListener('mousedown', (e) => {
         isDragging = true;
+        membersContent.classList.add('active');
         startX = e.pageX - membersContent.offsetLeft;
+        lastX = startX;
         scrollLeft = membersContent.scrollLeft;
         currentScrollLeft = scrollLeft;
         targetScrollLeft = scrollLeft;
@@ -333,55 +338,57 @@ document.addEventListener('DOMContentLoaded', function() {
         cancelAnimationFrame(rafId);
     });
 
-    membersContent.addEventListener('mousemove', (e) => {
-        if (!isDragging) return;
-        e.preventDefault();
-        const x = e.pageX - membersContent.offsetLeft;
-        const walk = (x - startX) * 0.8;
-        targetScrollLeft = scrollLeft - walk;
-    });
-
-    membersContent.addEventListener('mouseup', () => {
-        isDragging = false;
-        if (!isScrolling) {
-            isScrolling = true;
-            smoothScroll();
-        }
-    });
-
     membersContent.addEventListener('mouseleave', () => {
         if (isDragging) {
             isDragging = false;
-            if (!isScrolling) {
-                isScrolling = true;
-                smoothScroll();
-            }
+            membersContent.classList.remove('active');
+            momentumScroll();
         }
     });
 
-    // スムーズスクロールのアニメーション
-    function smoothScroll() {
-        currentScrollLeft = MathUtils.lerp(
-            currentScrollLeft,
-            targetScrollLeft,
-            0.08
-        );
-
-        velocity *= 0.99;
-        targetScrollLeft += velocity;
-
-        const maxScroll = membersContent.scrollWidth - membersContent.clientWidth;
-        targetScrollLeft = Math.max(0, Math.min(targetScrollLeft, maxScroll));
-
-        membersContent.scrollLeft = currentScrollLeft;
-
-        if (Math.abs(targetScrollLeft - currentScrollLeft) < 0.1 && Math.abs(velocity) < 0.1) {
-            cancelAnimationFrame(rafId);
-            isScrolling = false;
-            return;
+    membersContent.addEventListener('mouseup', () => {
+        if (isDragging) {
+            isDragging = false;
+            membersContent.classList.remove('active');
+            momentumScroll();
         }
+    });
 
-        rafId = requestAnimationFrame(smoothScroll);
+    membersContent.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        e.preventDefault();
+        const currentX = e.pageX - membersContent.offsetLeft;
+        
+        // 速度を計算
+        const dx = currentX - lastX;
+        const dt = 16; // 一般的なフレーム時間
+        velocity = dx / dt * 0.12; // Newsセクションと同じ速度係数
+
+        const diff = currentX - startX;
+        currentScrollLeft = scrollLeft - diff;
+        targetScrollLeft = currentScrollLeft;
+        membersContent.scrollLeft = currentScrollLeft;
+        
+        lastX = currentX;
+    });
+
+    // 慣性スクロールのアニメーション
+    function momentumScroll() {
+        if (Math.abs(velocity) > 0.01) {
+            currentScrollLeft += velocity * 16;
+            velocity *= 0.95;  // 減衰率を調整
+
+            // スクロール範囲の制限
+            const maxScroll = membersContent.scrollWidth - membersContent.clientWidth;
+            currentScrollLeft = Math.max(0, Math.min(currentScrollLeft, maxScroll));
+            
+            targetScrollLeft = currentScrollLeft;
+            membersContent.scrollLeft = currentScrollLeft;
+            
+            requestAnimationFrame(momentumScroll);
+        } else {
+            velocity = 0;
+        }
     }
 
     // 横スクロールの処理
