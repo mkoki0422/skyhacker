@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SKYHACKER</title>
+    <title>#SKYHACKER</title>
     <link rel="stylesheet" href="css/styles.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bayon&display=swap" rel="stylesheet">
     <script>document.documentElement.className="js";</script>
     <script defer src="js/script.js"></script>
+ 
 </head>
 <body>
     <!-- Loading Screen -->
@@ -17,14 +18,16 @@
     </div>
 
     <main>
-        <div data-scroll>
-            <section class="main-banner">
+        <div>
+            <section class="main-banner" id="top">
                 <div class="logo-container">
-                    <img src="media/logo.png" alt="SKYHACKER" class="logo">
+                    <img class="pc" src="media/logoskyhachker.png"  alt="logo">
+                    <img class="sp" src="media/logo (Page 6)_transparent2.png"  alt="SKYHACKER" class="logo">
+                    
                 </div>
             </section>
-
-            <section class="statement">
+            <!-- チーム紹介 -->
+            <section class="statement" id="about">
                 <div class="scroll-container">
                     <div class="text-infinity-scroll">
                         <!-- JavaScriptで動的に生成 -->
@@ -34,7 +37,7 @@
                     <div class="white-line"></div>
                     <div class="content-wrapper">
                         <div class="description">
-                            <h2>未来を空からハックする<br>#skyhacker</h2>
+                            <h2>未来を空からハックする　<br>#skyhacker</h2>
                             <p>チームメンバーがそれぞれ魅了された熱気球。その美しさやチームで全国を巡る楽しさを入り口に、空を舞台に真剣勝負するスポーツとしての「競技」の面白さに熱中しました。</p>
                             <p>まだまだ日本ではマイナースポーツですが、誰もが「空を見上げる」だけで前向きでワクワクした楽しい気持ちになれる力が、熱気球にはあると考えています。</p>
                             <p>空を介してまちや人をつなげることで、見上げることがまちに、人に、新しいワクワクを生み出し、日本を、世界をもっと前向きに明るくしていく。</p>
@@ -46,39 +49,64 @@
                     </div>
                 </div>
             </section>
-
-            <section class="members-section">
-                <div class="members-frame">
+            <!-- メンバー紹介 -->
+            <section class="members-section" id="team">
+                <div class="members-container">
                     <div class="members-content">
-                        <div class="profile-main"></div>
+                        <div class="main-profile">
+                            <img src="media/yamashita.png" alt="YAMASHITA">
+                        </div>
                         <div class="profile-grid-container">
                             <div class="profile-grid">
-                                <div class="profile-small"></div>
-                                <div class="profile-small"></div>
-                                <div class="profile-small"></div>
-                                <div class="profile-small"></div>
-                                <div class="profile-small"></div>
-                                <div class="profile-small"></div>
-                                <div class="profile-small"></div>
-                                <div class="profile-small"></div>
-                                <div class="profile-small"></div>
-                                <div class="profile-small"></div>
+                                <div class="profile-small">
+                                    <img src="media/koyoi.jpg" alt="koyoi">
+                                </div>
+                                <div class="profile-small">
+                                    <img src="media/yuma.png" alt="yuma">
+                                </div>
+                                <div class="profile-small">
+                                    <img src="media/tamaken.jpg" alt="tamaken">
+                                </div>
+                                <div class="profile-small">
+                                    <img src="media/koki.png" alt="koki">
+                                </div>
+                                <div class="profile-small">
+                                    <img src="media/koyamami.png" alt="koyamami">
+                                </div>
+                                <div class="profile-small">
+                                    <img src="media/inu.png" alt="inu">
+                                </div>
+                                <div class="profile-small">
+                                    <img src="media/kenichi.png" alt="kenichi">
+                                </div>
+                                <div class="profile-small">
+                                    <!-- 空のスロット -->
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="ticket-footer">
-                        <div class="ticket-id">ID NUMBER : 029183L83q02849020>>>>>>1288499288893758477F</div>
+                        <div class="ticket-id">
+                            <span class="pc-text">ID NUMBER : 029183L83q02849020>>>>>>1288499288893758477F</span>
+                            <span class="sp-text">ID NUMBER : 029183L83q02849020>>>>>></span>
+                        </div>
                         <img src="media/Group 24.svg" alt="Barcode" class="ticket-barcode">
-                        <div class="ticket-authorization">AUTHORIZED BY: SKYHACKER GROUP</div>
+                        <div class="ticket-authorization">
+                            <span class="pc-text">AUTHORIZED BY: #SKYHACKER GROUP</span>
+                            <span class="sp-text">AUTHORIZED BY: #SKYHACKER GROUP</span>
+                        </div>
                     </div>
                 </div>
             </section>
 
             <section class="image-section">
-                <div class="rotated-image"></div>
+                <div class="rotated-image">
+                    <img src="media/IMG_6800 1.png" alt="">
+                </div>
             </section>
 
-            <section class="news-section">
+            <!-- news -->
+            <section class="news-section" id="news">
                 <div class="news-header">
                     <div class="news-line"></div>
                     <h2 class="news-title">NEWS</h2>
@@ -86,45 +114,34 @@
                 <div class="news-scroll-container">
                     <div class="news-track">
                         <div class="news-card">
-                            <div class="news-image"></div>
+                            <img src="media/S__13828112_0.jpg" alt="Kameoka Taikai" class="news-image">
                             <div class="news-text">
-                                <p>07.04.24</p>
-                                <p>KAMEOKA TAIKAI</p>
+                                <div class="news-date">2025.01.03</div>
+                                <div class="news-description">京都亀岡バルーンフェスティバル2025開催日決定</div>
                             </div>
                         </div>
                         <div class="news-card">
-                            <div class="news-image"></div>
+                            <img src="media/kyoto-sports-award.jpg" alt="Kyoto Sports Award" class="news-image">
                             <div class="news-text">
-                                <p>07.04.24</p>
-                                <p>KAMEOKA TAIKAI</p>
+                                <div class="news-date">2024.12.28</div>
+                                <div class="news-description">山下太一朗が京都市スポーツ特別賞を受賞</div>
                             </div>
                         </div>
                         <div class="news-card">
-                            <div class="news-image"></div>
+                            <img src="media/S__13828121_0.jpg" alt="Grand Prix" class="news-image">
                             <div class="news-text">
-                                <p>07.04.24</p>
-                                <p>KAMEOKA TAIKAI</p>
+                                <div class="news-date">2024.12.15</div>
+                                <div class="news-description">熱気球ホンダグランプリ2024年間総合6位獲得</div>
                             </div>
                         </div>
-                        <div class="news-card">
-                            <div class="news-image"></div>
-                            <div class="news-text">
-                                <p>07.04.24</p>
-                                <p>KAMEOKA TAIKAI</p>
-                            </div>
-                        </div>
-                        <div class="news-card">
-                            <div class="news-image"></div>
-                            <div class="news-text">
-                                <p>07.04.24</p>
-                                <p>KAMEOKA TAIKAI</p>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </section>
 
-            <section class="schedule-section">
+
+            <!-- スケジュール -->
+            <section class="schedule-section" id="schedule">
                 <div class="schedule-frame">
                     <div class="schedule-frame-bottom"></div>
                 </div>
@@ -133,77 +150,56 @@
                 <div class="schedule-grid">
                     <div class="schedule-card">
                         <div class="date-container">
-                            <span class="month">08</span>
+                            <span class="month">04</span>
                             <svg class="date-slash" xmlns="http://www.w3.org/2000/svg" width="60" height="56" viewBox="0 0 60 56" fill="none">
                                 <path d="M1.02026 54.1636L58.089 1.27071" stroke="white" stroke-width="3"/>
                             </svg>
-                            <span class="day">28</span>
+                            <span class="day">04</span>
                         </div>
                         <span class="location">KAMEOKA</span>
                         <div class="card-background">
-                            <a href="https://www.google.com" target="_blank" class="see-more-button">
-                                <span class="see-more-text">SEE MORE</span>
-                            </a>
-                        </div>
-                
-                        <div class="card-overlay">
-                            <div class="date-container">
-                                <span class="month">08</span>
-                                <svg class="date-slash" xmlns="http://www.w3.org/2000/svg" width="77" height="72" viewBox="0 0 77 72" fill="none">
-                                    <path d="M1.75745 69.698L74.8332 2.1899" stroke="black" stroke-width="5"/>
-                                </svg>
-                                <span class="day">28</span>
-                            </div>
-                            <div class="qr-code"></div>
-                        </div>
-                    </div>
-                    <div class="schedule-card">
-                        <div class="date-container">
-                            <span class="month">09</span>
-                            <svg class="date-slash" xmlns="http://www.w3.org/2000/svg" width="60" height="56" viewBox="0 0 60 56" fill="none">
-                                <path d="M1.02026 54.1636L58.089 1.27071" stroke="white" stroke-width="3"/>
-                            </svg>
-                            <span class="day">15</span>
-                        </div>
-                        <span class="location">SAGA</span>
-                        <div class="card-background">
-                            <a href="https://www.google.com" target="_blank" class="see-more-button">
+                            <p> 京都・亀岡バルーンフェスティバル2025に大会運営役員・選手として参加。玉井がエントリー予定。</p>
+                            <a href="https://kameoka-city.studio.site/hot_air_balloon" target="_blank" class="see-more-button">
                                 <span class="see-more-text">SEE MORE</span>
                             </a>
                         </div>
                         <div class="card-overlay">
                             <div class="date-container">
-                                <span class="month">09</span>
+                                <span class="month">04</span>
                                 <svg class="date-slash" xmlns="http://www.w3.org/2000/svg" width="77" height="72" viewBox="0 0 77 72" fill="none">
                                     <path d="M1.75745 69.698L74.8332 2.1899" stroke="black" stroke-width="5"/>
                                 </svg>
-                                <span class="day">15</span>
+                                <span class="day">04</span>
                             </div>
+                            <span class="overlay-location">KAMEOKA</span>
                             <div class="qr-code"></div>
                         </div>
                     </div>
                     <div class="schedule-card">
                         <div class="date-container">
-                            <span class="month">10</span>
+                            <span class="month">05</span>
                             <svg class="date-slash" xmlns="http://www.w3.org/2000/svg" width="60" height="56" viewBox="0 0 60 56" fill="none">
                                 <path d="M1.02026 54.1636L58.089 1.27071" stroke="white" stroke-width="3"/>
                             </svg>
                             <span class="day">03</span>
                         </div>
-                        <span class="location">FUJISAWA</span>
+                        <span class="location">SAKU</span>
                         <div class="card-background">
-                            <a href="https://www.google.com" target="_blank" class="see-more-button">
+                            <p>ホンダグランプリ第1戦佐久バルーンフェスティバル2025に選手として参加。山下がエントリー予定。
+                            </p>
+                            <a href="https://global.honda/jp/balloon/" target="_blank" class="see-more-button">
                                 <span class="see-more-text">SEE MORE</span>
                             </a>
                         </div>
                         <div class="card-overlay">
                             <div class="date-container">
-                                <span class="month">10</span>
+                                <span class="month">05</span>
                                 <svg class="date-slash" xmlns="http://www.w3.org/2000/svg" width="77" height="72" viewBox="0 0 77 72" fill="none">
                                     <path d="M1.75745 69.698L74.8332 2.1899" stroke="black" stroke-width="5"/>
                                 </svg>
                                 <span class="day">03</span>
                             </div>
+                            <span class="overlay-location">SAKU</span>
                             <div class="qr-code"></div>
                         </div>
                     </div>
@@ -213,11 +209,12 @@
                             <svg class="date-slash" xmlns="http://www.w3.org/2000/svg" width="60" height="56" viewBox="0 0 60 56" fill="none">
                                 <path d="M1.02026 54.1636L58.089 1.27071" stroke="white" stroke-width="3"/>
                             </svg>
-                            <span class="day">22</span>
+                            <span class="day">11</span>
                         </div>
-                        <span class="location">MATSUE</span>
+                        <span class="location">ICHINOSEKI</span>
                         <div class="card-background">
-                            <a href="https://www.google.com" target="_blank" class="see-more-button">
+                            <p>Coming Soon</p>
+                            <a href="https://global.honda/jp/balloon/" target="_blank" class="see-more-button">
                                 <span class="see-more-text">SEE MORE</span>
                             </a>
                         </div>
@@ -227,58 +224,36 @@
                                 <svg class="date-slash" xmlns="http://www.w3.org/2000/svg" width="77" height="72" viewBox="0 0 77 72" fill="none">
                                     <path d="M1.75745 69.698L74.8332 2.1899" stroke="black" stroke-width="5"/>
                                 </svg>
-                                <span class="day">22</span>
+                                <span class="day">11</span>
                             </div>
+                            <span class="overlay-location">ICHINOSEKI</span>
                             <div class="qr-code"></div>
                         </div>
                     </div>
                     <div class="schedule-card">
                         <div class="date-container">
-                            <span class="month">11</span>
+                            <span class="month">10</span>
                             <svg class="date-slash" xmlns="http://www.w3.org/2000/svg" width="60" height="56" viewBox="0 0 60 56" fill="none">
                                 <path d="M1.02026 54.1636L58.089 1.27071" stroke="white" stroke-width="3"/>
                             </svg>
-                            <span class="day">08</span>
+                            <span class="day">31</span>
                         </div>
-                        <span class="location">TOYAMA</span>
+                        <span class="location">SAGA</span>
                         <div class="card-background">
-                            <a href="https://www.google.com" target="_blank" class="see-more-button">
+                            <p>Coming Soon</p>
+                            <a href="https://global.honda/jp/balloon/" target="_blank" class="see-more-button">
                                 <span class="see-more-text">SEE MORE</span>
                             </a>
                         </div>
                         <div class="card-overlay">
                             <div class="date-container">
-                                <span class="month">11</span>
+                                <span class="month">10</span>
                                 <svg class="date-slash" xmlns="http://www.w3.org/2000/svg" width="77" height="72" viewBox="0 0 77 72" fill="none">
                                     <path d="M1.75745 69.698L74.8332 2.1899" stroke="black" stroke-width="5"/>
                                 </svg>
-                                <span class="day">08</span>
+                                <span class="day">31</span>
                             </div>
-                            <div class="qr-code"></div>
-                        </div>
-                    </div>
-                    <div class="schedule-card">
-                        <div class="date-container">
-                            <span class="month">11</span>
-                            <svg class="date-slash" xmlns="http://www.w3.org/2000/svg" width="60" height="56" viewBox="0 0 60 56" fill="none">
-                                <path d="M1.02026 54.1636L58.089 1.27071" stroke="white" stroke-width="3"/>
-                            </svg>
-                            <span class="day">25</span>
-                        </div>
-                        <span class="location">SENDAI</span>
-                        <div class="card-background">
-                            <a href="https://www.google.com" target="_blank" class="see-more-button">
-                                <span class="see-more-text">SEE MORE</span>
-                            </a>
-                        </div>
-                        <div class="card-overlay">
-                            <div class="date-container">
-                                <span class="month">11</span>
-                                <svg class="date-slash" xmlns="http://www.w3.org/2000/svg" width="77" height="72" viewBox="0 0 77 72" fill="none">
-                                    <path d="M1.75745 69.698L74.8332 2.1899" stroke="black" stroke-width="5"/>
-                                </svg>
-                                <span class="day">25</span>
-                            </div>
+                            <span class="overlay-location">SAGA</span>
                             <div class="qr-code"></div>
                         </div>
                     </div>
@@ -288,11 +263,12 @@
                             <svg class="date-slash" xmlns="http://www.w3.org/2000/svg" width="60" height="56" viewBox="0 0 60 56" fill="none">
                                 <path d="M1.02026 54.1636L58.089 1.27071" stroke="white" stroke-width="3"/>
                             </svg>
-                            <span class="day">10</span>
+                            <span class="day">13</span>
                         </div>
-                        <span class="location">NAGANO</span>
+                        <span class="location">WATARASE</span>
                         <div class="card-background">
-                            <a href="https://www.google.com" target="_blank" class="see-more-button">
+                            <p>Coming Soon</p>
+                            <a href="https://global.honda/jp/balloon/" target="_blank" class="see-more-button">
                                 <span class="see-more-text">SEE MORE</span>
                             </a>
                         </div>
@@ -302,166 +278,61 @@
                                 <svg class="date-slash" xmlns="http://www.w3.org/2000/svg" width="77" height="72" viewBox="0 0 77 72" fill="none">
                                     <path d="M1.75745 69.698L74.8332 2.1899" stroke="black" stroke-width="5"/>
                                 </svg>
-                                <span class="day">10</span>
+                                <span class="day">13</span>
                             </div>
-                            <div class="qr-code"></div>
-                        </div>
-                    </div>
-                    <div class="schedule-card">
-                        <div class="date-container">
-                            <span class="month">12</span>
-                            <svg class="date-slash" xmlns="http://www.w3.org/2000/svg" width="60" height="56" viewBox="0 0 60 56" fill="none">
-                                <path d="M1.02026 54.1636L58.089 1.27071" stroke="white" stroke-width="3"/>
-                            </svg>
-                            <span class="day">24</span>
-                        </div>
-                        <span class="location">SAPPORO</span>
-                        <div class="card-background">
-                            <a href="https://www.google.com" target="_blank" class="see-more-button">
-                                <span class="see-more-text">SEE MORE</span>
-                            </a>
-                        </div>
-                        <div class="card-overlay">
-                            <div class="date-container">
-                                <span class="month">12</span>
-                                <svg class="date-slash" xmlns="http://www.w3.org/2000/svg" width="77" height="72" viewBox="0 0 77 72" fill="none">
-                                    <path d="M1.75745 69.698L74.8332 2.1899" stroke="black" stroke-width="5"/>
-                                </svg>
-                                <span class="day">24</span>
-                            </div>
-                            <div class="qr-code"></div>
-                        </div>
-                    </div>
-                    <div class="schedule-card">
-                        <div class="date-container">
-                            <span class="month">01</span>
-                            <svg class="date-slash" xmlns="http://www.w3.org/2000/svg" width="60" height="56" viewBox="0 0 60 56" fill="none">
-                                <path d="M1.02026 54.1636L58.089 1.27071" stroke="white" stroke-width="3"/>
-                            </svg>
-                            <span class="day">15</span>
-                        </div>
-                        <span class="location">OSAKA</span>
-                        <div class="card-background">
-                            <a href="https://www.google.com" target="_blank" class="see-more-button">
-                                <span class="see-more-text">SEE MORE</span>
-                            </a>
-                        </div>
-                        <div class="card-overlay">
-                            <div class="date-container">
-                                <span class="month">01</span>
-                                <svg class="date-slash" xmlns="http://www.w3.org/2000/svg" width="77" height="72" viewBox="0 0 77 72" fill="none">
-                                    <path d="M1.75745 69.698L74.8332 2.1899" stroke="black" stroke-width="5"/>
-                                </svg>
-                                <span class="day">15</span>
-                            </div>
-                            <div class="qr-code"></div>
-                        </div>
-                    </div>
-                    <div class="schedule-card">
-                        <div class="date-container">
-                            <span class="month">02</span>
-                            <svg class="date-slash" xmlns="http://www.w3.org/2000/svg" width="60" height="56" viewBox="0 0 60 56" fill="none">
-                                <path d="M1.02026 54.1636L58.089 1.27071" stroke="white" stroke-width="3"/>
-                            </svg>
-                            <span class="day">05</span>
-                        </div>
-                        <span class="location">FUKUOKA</span>
-                        <div class="card-background">
-                            <a href="https://www.google.com" target="_blank" class="see-more-button">
-                                <span class="see-more-text">SEE MORE</span>
-                            </a>
-                        </div>
-                        <div class="card-overlay">
-                            <div class="date-container">
-                                <span class="month">02</span>
-                                <svg class="date-slash" xmlns="http://www.w3.org/2000/svg" width="77" height="72" viewBox="0 0 77 72" fill="none">
-                                    <path d="M1.75745 69.698L74.8332 2.1899" stroke="black" stroke-width="5"/>
-                                </svg>
-                                <span class="day">05</span>
-                            </div>
-                            <div class="qr-code"></div>
-                        </div>
-                    </div>
-                    <div class="schedule-card">
-                        <div class="date-container">
-                            <span class="month">02</span>
-                            <svg class="date-slash" xmlns="http://www.w3.org/2000/svg" width="60" height="56" viewBox="0 0 60 56" fill="none">
-                                <path d="M1.02026 54.1636L58.089 1.27071" stroke="white" stroke-width="3"/>
-                            </svg>
-                            <span class="day">28</span>
-                        </div>
-                        <span class="location">NAGOYA</span>
-                        <div class="card-background">
-                            <a href="https://www.google.com" target="_blank" class="see-more-button">
-                                <span class="see-more-text">SEE MORE</span>
-                            </a>
-                        </div>
-                        <div class="card-overlay">
-                            <div class="date-container">
-                                <span class="month">02</span>
-                                <svg class="date-slash" xmlns="http://www.w3.org/2000/svg" width="77" height="72" viewBox="0 0 77 72" fill="none">
-                                    <path d="M1.75745 69.698L74.8332 2.1899" stroke="black" stroke-width="5"/>
-                                </svg>
-                                <span class="day">28</span>
-                            </div>
-                            <div class="qr-code"></div>
-                        </div>
-                    </div>
-                    <div class="schedule-card">
-                        <div class="date-container">
-                            <span class="month">03</span>
-                            <svg class="date-slash" xmlns="http://www.w3.org/2000/svg" width="60" height="56" viewBox="0 0 60 56" fill="none">
-                                <path d="M1.02026 54.1636L58.089 1.27071" stroke="white" stroke-width="3"/>
-                            </svg>
-                            <span class="day">20</span>
-                        </div>
-                        <span class="location">TOKYO</span>
-                        <div class="card-background">
-                            <a href="https://www.google.com" target="_blank" class="see-more-button">
-                                <span class="see-more-text">SEE MORE</span>
-                            </a>
-                        </div>
-                        <div class="card-overlay">
-                            <div class="date-container">
-                                <span class="month">03</span>
-                                <svg class="date-slash" xmlns="http://www.w3.org/2000/svg" width="77" height="72" viewBox="0 0 77 72" fill="none">
-                                    <path d="M1.75745 69.698L74.8332 2.1899" stroke="black" stroke-width="5"/>
-                                </svg>
-                                <span class="day">20</span>
-                            </div>
+                            <span class="overlay-location">WATARASE</span>
                             <div class="qr-code"></div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="instagram-section">
-                <div class="instagram-grid">
-                    <div class="instagram-tile"></div>
-                    <div class="instagram-tile"></div>
-                    <div class="instagram-tile"></div>
-                    <div class="instagram-tile"></div>
-                    <div class="instagram-tile"></div>
-                    <div class="instagram-tile"></div>
-                    <div class="instagram-tile"></div>
-                    <div class="instagram-tile"></div>
-                    <div class="instagram-tile"></div>
+            <!-- インスタ -->
+            <section class="instag">
+                <div class="foto">
+                    <script src="https://code.jquery.com/jquery-3.6.4.min.js"
+                        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+                    <script src="./js/foto.js"></script>
+                    <ul class="insta_list"></ul>
                 </div>
                 <div class="instagram-button">
                     <span>VIEW INSTAGRAM</span>
                 </div>
             </section>
 
-            <section class="contact-section">
+            <section class="contact-section" id="contact">
                 <h2 class="contact-title">お問い合わせ</h2>
-                <p class="contact-message">一緒に気球会盛り上げていく仲間達募集中！</p>
-                <a href="https://forms.gle/your-form-url" target="_blank" class="contact-button">
+                <p class="contact-message">お気軽にお問い合わせください。</p>
+                <a href="https://forms.gle/Nt4YPxGZWBGPGPYz7" target="_blank" class="contact-button">
                     <span>CONTACT US</span>
                 </a>
             </section>
 
-            <section class="content-after">
-                <!-- スクロール用の空セクション -->
+             <!-- footer -->
+            <section class="footer-section">
+                <div class="footer-frame">
+                    <div class="footer-content">
+                        <nav class="footer-nav">
+                            <a href="#top">TOP</a>
+                            <a href="#team">TEAM MEMBER</a>
+                            <a href="#news">NEWS</a>
+                            <a href="#schedule">SCHEDULE</a>
+                            <a href="#contact">お問い合わせ</a>
+                        </nav>
+                        <div class="footer-right">
+                            <div class="social-links">
+                                <a href="#" target="_blank">Instagram</a>
+                                <a href="https://www.youtube.com/@skyhacker4552" target="_blank">Youtube</a>
+                                <a href="https://x.com/suerte021" target="_blank">X</a>
+                                <a href="#" target="_blank"></a>
+                                <a href="#" target="_blank"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright">
+                    2025 #skyhacker®
+                </div>
             </section>
         </div>
 
@@ -471,11 +342,11 @@
                 <div class="profile-popup-nav">
                     <div class="nav-left">
                         <span class="nav-arrow left">◀︎</span>
-                        <span class="next-hacker">NEXT HACKER</span>
+                        <span class="next-hacker">NEXT MEMBER</span>
                     </div>
                     <span class="close-button">X CLOSE</span>
                     <div class="nav-right">
-                        <span class="next-hacker">NEXT HACKER</span>
+                        <span class="next-hacker">NEXT MEMBER</span>
                         <span class="nav-arrow right">▶︎</span>
                     </div>
                 </div>
@@ -483,24 +354,44 @@
                     <div class="profile-popup-image"></div>
                     <div class="profile-popup-text">
                         <h1>YAMASHITA<br>TAICHIROU</h1>
-                        <div class="profile-popup-info">AGE * 28</div>
-                        <div class="profile-popup-info">FROM * KOCHI PREFECTURE</div>
-                        <div class="profile-popup-info">EXPERIENCE * CAPTAIN</div>
+                    
+                        <div class="profile-popup-jname"></div>
+                        <div class="profile-popup-info"></div>
                         <div class="profile-popup-description">
-                            <p>天気が同世代の中で（一番）できると（おそらく）思ってもらえていた（と信じたい）のでジュニア誘ってもらえた（結局いかなかったけど）（あとそのとき山下さんとそんなに仲良くなかった..........）</p>
+                            <p></p>
                         </div>
                     </div>
                 </div>
                 <div class="popup-ticket-footer">
                     <div class="popup-ticket-id">ID NUMBER : 029183L83q02849020>>>>>>12884992888937584777849F</div>
                     <img src="media/Group 24_black.svg" alt="Barcode" class="popup-ticket-barcode">
-                    <div class="popup-ticket-authorization">AUTHORIZED BY: SKYHACKER GROUP</div>
+                    <div class="popup-ticket-authorization">AUTHORIZED BY: #SKYHACKER GROUP</div>
                 </div>
             </div>
         </div>
+        <!-- News Popup -->
+        <!-- <div class="news-popup-overlay">
+            <div class="news-popup-card">
+
+                <div class="news-popup-content">
+                    <div class="news-popup-image"></div>
+                    <div class="news-popup-text">
+                        <h1 class="news-popup-title"></h1>
+                        <p class="news-popup-date"></p>
+                        <p class="news-popup-description"></p>
+                    </div>
+                </div>
+                <div class="news-popup-nav">
+                    <span class="news-close-button">X CLOSE</span>
+                </div>
+            </div>
+        </div> -->
+
     </main>
+    <div class="copyright">
+        2025 #skyhacker®
+    </div>
     <script src="/js/imagesloaded.pkgd.min.js"></script>
-    <script src="/js/demo.js"></script>
     <!-- jQuery and related libraries -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
